@@ -1,8 +1,8 @@
-/* This file is auto generated, version 70 */
+/* This file is auto generated, version 2 */
 /*  PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#70 PREEMPT Sat Apr 20 07:42:52 IST 2013"
-#define LINUX_COMPILE_TIME "07:42:52"
+#define UTS_VERSION "#2 PREEMPT Mon Jul 15 08:55:47 IST 2013"
+#define LINUX_COMPILE_TIME "08:55:47"
 #define LINUX_COMPILE_BY "deviant-kernel"
 #define LINUX_COMPILE_HOST "noOb-lab"
 #define LINUX_COMPILE_DOMAIN "(none)"

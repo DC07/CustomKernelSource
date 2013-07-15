@@ -29,8 +29,8 @@
  * It helps to keep variable names smaller, simpler
  */
 
-#define DEF_FREQUENCY_UP_THRESHOLD		(90)
-#define DEF_FREQUENCY_DOWN_THRESHOLD		(40)
+#define DEF_FREQUENCY_UP_THRESHOLD		(75)
+#define DEF_FREQUENCY_DOWN_THRESHOLD		(50)
 
 /*
  * The polling frequency of this governor depends on the capability of
@@ -46,13 +46,12 @@
 
 static unsigned int min_sampling_rate;
 
-#define LATENCY_MULTIPLIER			(1000)
+#define LATENCY_MULTIPLIER			(300)
 #define MIN_LATENCY_MULTIPLIER			(100)
-#define DEF_SAMPLING_DOWN_FACTOR		(1)
+#define DEF_SAMPLING_DOWN_FACTOR		(2)
 #define MAX_SAMPLING_DOWN_FACTOR		(10)
 #define TRANSITION_LATENCY_LIMIT		(10 * 1000 * 1000)
-#define DEF_FREQ_STEP				(10)
-#define DEF_IGNORE_NICE				(0)
+#define DEFAULT_FREQUENCY_STEP			(15)
 
 static void do_dbs_timer(struct work_struct *work);
 
@@ -96,8 +95,8 @@ static struct dbs_tuners {
 	.up_threshold = DEF_FREQUENCY_UP_THRESHOLD,
 	.down_threshold = DEF_FREQUENCY_DOWN_THRESHOLD,
 	.sampling_down_factor = DEF_SAMPLING_DOWN_FACTOR,
-	.ignore_nice = DEF_IGNORE_NICE,
-	.freq_step = DEF_FREQ_STEP,
+	.ignore_nice = 0,
+	.freq_step = DEFAULT_FREQUENCY_STEP,
 };
 
 static inline cputime64_t get_cpu_idle_time_jiffy(unsigned int cpu,
